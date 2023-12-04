@@ -7,6 +7,8 @@ alias lla="ls -alh"
 alias ..="cd .."
 alias ...="cd ../.."
 
+alias df="df -h"
+
 alias vi="nvim"
 alias vim="nvim"
 
@@ -14,3 +16,39 @@ alias top="htop"
 
 alias vibashrc="vi ~/.bashrc && source ~/.bashrc"
 alias vialias="vi ~/.dotfiles/aliases && source ~/.dotfiles/aliases"
+
+# Laravel
+alias art="php artisan"
+alias tinker="php artisan tinker"
+alias migrate="php artisan migrate"
+alias migratefresh="php artisan migrate:fresh"
+
+alias sail="[ -f sail ] && sh sail || sh vendor/bin/sail"
+alias sailup="sail up -d"
+alias saildown="sail down"
+alias sart="sail artisan"
+alias scomposer="sail composer"
+alias sphp="sail php"
+alias snpm="sail npm"
+
+alias docker-composer-install='docker run --rm \
+    -u "$(id -u):$(id -g)" \
+    -v "$(pwd):/var/www/html" \
+    -w /var/www/html \
+    laravelsail/php82-composer:latest \
+    composer install --ignore-platform-reqs'
+
+# Docker
+alias docker-gc="docker system prune -a --volumes"
+
+# Git
+alias g="git"
+alias gs="git status"
+alias ga="git add"
+alias gaa="git add ."
+alias gc="git commit"
+alias gcm="git commit -m"
+alias gca="git commit --amend"
+alias gcam="git commit --amend -m"
+alias gco="git checkout"
+alias gcb="git checkout -b"

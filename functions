@@ -20,3 +20,13 @@ is_termux() {
 is_macos() {
     test "$(uname)" = Darwin
 }
+
+# Docker
+function ssh-docker() {
+   docker exec -it "$@" bash
+}
+
+# Create a new directory and enter it
+function mkd() {
+   mkdir -p "$@" && cd "$@"
+}
