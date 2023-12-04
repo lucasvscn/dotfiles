@@ -3,6 +3,8 @@
 # Load all the functions
 test -r ~/.dotfiles/functions && source $_
 
+add_to_path top $HOME/.dotfiles/bin
+
 # History
 HISTSIZE=9999
 HISTFILESIZE=9999

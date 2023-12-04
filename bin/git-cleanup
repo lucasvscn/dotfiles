@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+# Remove remote-tracking references that no longer exists on the remote
+git fetch --prune
+
