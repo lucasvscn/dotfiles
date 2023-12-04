@@ -1,0 +1,16 @@
+
+alias ls="ls --color=auto --group-directories-first"
+alias ll="ls -lh"
+alias la="ls -a"
+alias lla="ls -alh"
+
+alias ..="cd .."
+alias ...="cd ../.."
+
+alias vi="nvim"
+alias vim="nvim"
+
+alias top="htop"
+
+alias vibashrc="vi ~/.bashrc && source ~/.bashrc"
+alias vialias="vi ~/.dotfiles/aliases && source ~/.dotfiles/aliases"
