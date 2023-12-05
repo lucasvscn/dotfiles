@@ -5,11 +5,11 @@ if [ -f $HOME/.bashrc ]; then
     mv -v $HOME/.bashrc{,.bak}
 fi
 
-ln -sv $HOME/dotfiles/.bashrc $HOME/.bashrc
+ln -sv $HOME/.dotfiles/bashrc $HOME/.bashrc
 
 # Make a copy of .gitconfig if file exists
 if [ -f $HOME/.gitconfig ]; then
     mv -v $HOME/.gitconfig{,.bak}
 fi
 
-ln -sv $HOME/dotfiles/.gitconfig $HOME/.gitconfig
+ln -sv $HOME/.dotfiles/gitconfig $HOME/.gitconfig
