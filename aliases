@@ -41,14 +41,3 @@ alias docker-composer-install='docker run --rm \
 # Docker
 alias docker-gc="docker system prune -a --volumes"
 
-# Git
-alias g="git"
-alias gs="git status"
-alias ga="git add"
-alias gaa="git add ."
-alias gc="git commit"
-alias gcm="git commit -m"
-alias gca="git commit --amend"
-alias gcam="git commit --amend -m"
-alias gco="git checkout"
-alias gcb="git checkout -b"
