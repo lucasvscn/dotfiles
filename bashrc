@@ -105,6 +105,7 @@ fi
 export GPG_TTY=$(tty)
 
 add_to_path top $HOME/.dotfiles/bin
+add_to_path top $HOME/.local/bin
 
 # enable asdf
 if [ -f ~/.asdf/asdf.sh ]; then
