@@ -91,8 +91,6 @@ if [ -f ~/.dotfiles/aliases ]; then
     . ~/.dotfiles/aliases
 fi
 
-add_to_path top $HOME/.dotfiles/bin
-
 # enable programmable completion features (you don't need to enable
 # this, if it's already enabled in /etc/bash.bashrc and /etc/profile
 # sources /etc/bash.bashrc).
@@ -105,3 +103,20 @@ if ! shopt -oq posix; then
 fi
 
 export GPG_TTY=$(tty)
+
+add_to_path top $HOME/.dotfiles/bin
+
+# enable asdf
+if [ -f ~/.asdf/asdf.sh ]; then
+  . ~/.asdf/asdf.sh
+fi
+
+if [ -f ~/.asdf/completions/asdf.bash ]; then
+  . ~/.asdf/completions/asdf.bash
+fi
+
+# set JAVA_HOME
+if [ -f ~/.asdf/plugins/java/set-java-home.bash ]; then
+  . ~/.asdf/plugins/java/set-java-home.bash
+fi
+
