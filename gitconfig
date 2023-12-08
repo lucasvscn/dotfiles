@@ -1,6 +1,11 @@
 [user]
 	name = Lucas Vasconcelos
 	email = lucas@vasconcelos.cc
+	signingkey = 8883E4EC46BF6951
+[commit]
+	gpgsign = true
+[tag]
+	gpgsign = true
 [alias]
 	st = status
 	ss = status --short
