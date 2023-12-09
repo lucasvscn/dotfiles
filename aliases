@@ -9,12 +9,12 @@ alias ...="cd ../.."
 
 alias df="df -h"
 
-alias vi="nvim"
-alias vim="nvim"
+alias vi="vim"
 
 alias top="htop"
 
 alias vibashrc="vi ~/.bashrc && source ~/.bashrc"
+alias vibashrc="vi ~/.zshrc && source ~/.zshrc"
 alias vialias="vi ~/.dotfiles/aliases && source ~/.dotfiles/aliases"
 
 # Laravel
