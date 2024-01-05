@@ -18,6 +18,4 @@ fpath=(${ASDF_DIR}/completions $fpath)
 autoload -Uz compinit && compinit
 
 # set JAVA_HOME
-if [ -f ~/.asdf/plugins/java/set-java-home.bash ]; then
-  . ~/.asdf/plugins/java/set-java-home.bash
-fi
+[ -f ~/.asdf/plugins/java/set-java-home.zsh ] && source ~/.asdf/plugins/java/set-java-home.zsh
