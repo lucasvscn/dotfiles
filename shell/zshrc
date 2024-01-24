@@ -1,0 +1,11 @@
+test -r ~/.dotfiles/shell/rc && source $_
+
+# Enabnle asdf
+test -r ~/.asdf/asdf.sh && source $_
+
+# Enable asdf completions
+fpath=(${ASDF_DIR}/completions $fpath)
+autoload -Uz compinit && compinit
+
+# set JAVA_HOME
+test -r ~/.asdf/plugins/java/set-java-home.zsh && source $_

@@ -21,12 +21,25 @@ is_macos() {
     test "$(uname)" = Darwin
 }
 
-# Docker
 function ssh-docker() {
    docker exec -it "$@" bash
 }
 
-# Create a new directory and enter it
 function mkd() {
    mkdir -p "$@" && cd "$@"
 }
+
+# Load all the path
+add_to_path top $HOME/.dotfiles/bin
+add_to_path top $HOME/.local/bin
+
+# Load all the aliases
+test -r ~/.dotfiles/shell/aliases && source $_
+
+# GPG TTY
+export GPG_TTY=$(tty)
+
+# SSH Agent
+if [ -z "$SSH_AUTH_SOCK" ] && [ -x "$(command -v ssh-agent)" ]; then
+    eval "$(ssh-agent -s)"
+fi

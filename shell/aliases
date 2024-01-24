@@ -1,24 +1,29 @@
 
+# Moving around
+alias ..="cd .."
+alias ...="cd ../.."
 alias ls="ls --color=auto --group-directories-first"
 alias ll="ls -lh"
 alias la="ls -a"
 alias lla="ls -alh"
 
-alias ..="cd .."
-alias ...="cd ../.."
-
+# Better defaults
 alias df="df -h"
+alias du="du -h"
+alias free="free -h"
+alias grep="grep --color=auto"
+alias mkdir="mkdir -pv"
+alias ping="ping -c 5"
+alias wget="wget -c"
+alias xclip="xclip -selection clipboard"
+alias tmux="tmux -2"
 
+# Better tools
 alias vi="vim"
-
 alias top="htop"
 
-alias vibashrc="vi ~/.bashrc && source ~/.bashrc"
-alias vibashrc="vi ~/.zshrc && source ~/.zshrc"
-alias vialias="vi ~/.dotfiles/aliases && source ~/.dotfiles/aliases"
-
 # Laravel
-alias art="php artisan"
+alias artisan="php artisan"
 alias tinker="php artisan tinker"
 alias migrate="php artisan migrate"
 alias migratefresh="php artisan migrate:fresh"
@@ -41,3 +46,5 @@ alias docker-composer-install='docker run --rm \
 # Docker
 alias docker-gc="docker system prune -a --volumes"
 
+# ed: Show a ruler as reference to git commit 50/72 max width
+alias ed-ruler="echo '-----------------------------------------------50|-------------------72|'"

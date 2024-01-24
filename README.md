@@ -15,3 +15,9 @@ Run the setup script:
 ```
 $HOME/.dotfiles/setup
 ```
+
+Aditionally, you can install PHP 8.3 using the script:
+
+```
+$ install-php83
+```

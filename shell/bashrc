@@ -1,0 +1,8 @@
+test -r ~/.dotfiles/shell/rc && source $_
+
+# Enable asdf
+test -r ~/.asdf/asdf.sh && source $_
+test -r ~/.asdf/completions/asdf.bash && source $_
+
+# set JAVA_HOME
+test -r ~/.asdf/plugins/java/set-java-home.bash && source $_
