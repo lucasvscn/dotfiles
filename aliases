@@ -1,0 +1,39 @@
+# vim: ft=sh
+
+# Moving around
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+alias home='cd ~'
+
+# Overwrite default commands
+alias df='df -h'
+alias du='du -h'
+alias free='free -h'
+alias ls='ls --color=auto --group-directories-first'
+alias vi='vim'
+
+# Git shortcuts
+alias nah='git reset --hard;git clean -df'
+alias g='git'
+alias gs='git status'
+alias ga='git add'
+alias gc='git commit'
+
+# Docker shortcuts
+alias d='docker'
+alias dc='docker-compose'
+alias docker-rm-all='docker rm $(docker ps -a -q)'
+alias docker-gc='docker rmi $(docker images -f "dangling=true" -q);docker rm $(docker ps -a -q);docker volume rm $(docker volume ls -qf dangling=true);docker network rm $(docker network ls -qf dangling=true);docker system prune -f'
+
+# PHP shortcuts
+alias phpunit='vendor/bin/phpunit'
+alias phpunit-coverage='vendor/bin/phpunit --coverage-html=coverage'
+alias docker-composer-install='docker run --rm -u "$(id -u):$(id -g)" -v "$(pwd):/var/www/html" -w /var/www/html laravelsail/php82-composer:latest composer install --ignore-platform-reqs'
+alias docker-composer83-install='docker run --rm -u "$(id -u):$(id -g)" -v "$(pwd):/var/www/html" -w /var/www/html laravelsail/php83-composer:latest composer install --ignore-platform-reqs'
+
+# Laravel shortcuts
+alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
+alias artisan='sail artisan'
+alias tinker='sail artisan tinker'
+

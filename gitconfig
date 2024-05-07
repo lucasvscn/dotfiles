@@ -1,0 +1,65 @@
+[user]
+    name = Lucas Vasconcelos
+    email = lucas@vasconcelos.cc
+    signingkey = 8883E4EC46BF6951
+[commit]
+    gpgsign = true
+[tag]
+    gpgsign = true
+[alias]
+    a = add --all
+    s = status --short
+    st = status
+    ss = status --short
+    ad = add
+    aa = add --all
+    co = checkout
+    cp = cherry-pick
+    ci = commit
+    pl = pull --rebase
+    ps = push
+    br = branch
+
+    rmb = branch -D
+    main = checkout main
+
+    unstage = reset HEAD
+    uncommit = reset --soft HEAD^
+    diffw = diff -w --ignore-blank-lines
+    worddiff = diff --color-words
+
+    # pretty logs
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+    log-graph = log --oneline --decorate --all --graph
+    last = log -1 -p
+
+    # hash, date, email, summary
+    log4 = log -n 7 --oneline --reverse --date=short \
+        --pretty=format:'%Cblue%h%Creset %C(yellow)%ad%Creset %Cred%<(22,trunc)%ae%Creset%s'
+
+    # hash, date, summary
+    log3 = !sh -c 'git log4 $@ --color=always | tr -s \" \" | cut -d \" \" -f 1,2,4-' -
+
+    # hash, summary
+    log2 = !sh -c 'git log3 $@ | cut -d \" \" -f 1,4-' -
+
+    # What's new since the last git pull?
+    new = !sh -c 'git log4 -n 999 @{1}..@{0}'
+[pull]
+    ff = only
+[push]
+    default = current
+[remote "origin"]
+    prune = true
+[remote "upstream"]
+    prune = true
+[core]
+    editor = vi
+[color]
+    ui = auto
+[help]
+    autocorrect = 1
+[init]
+    defaultBranch = main
+[branch "main"]
+    mergeoptions = --ff-only

@@ -1,0 +1,50 @@
+# vim: ft=sh
+
+add_to_path() {
+    local dir="${2%/}"  # remove trailing /
+
+    # Skip if not a dir
+    test -d "$dir" || return 0
+
+    # Skip if already added
+    echo ":$PATH:" | grep -q ":$dir:" && return 0
+
+    case "$1" in
+        top   ) PATH="$dir:$PATH" ;;
+        bottom) PATH="$PATH:$dir" ;;
+    esac
+}
+
+is_termux() {
+    case "$HOME" in *termux*) true;; *) false;; esac
+}
+
+is_macos() {
+    test "$(uname)" = Darwin
+}
+
+function ssh-docker() {
+   docker exec -it "$@" bash
+}
+
+function mkd() {
+   mkdir -p "$@" && cd "$@"
+}
+
+# Edit .dotfiles with $EDITOR, then source it
+function dotfiles() {
+    # if no arguments, open the dotfiles directory
+    if [ $# -eq 0 ]; then
+        $EDITOR "$DOTFILES_DIR"
+        return
+    fi
+
+    # if file doesn't exist, error and exit
+    if [ ! -f "$DOTFILES_DIR/$1" ]; then
+        echo "File not found: $DOTFILES_DIR/$1"
+        return
+    fi
+
+    $EDITOR "$DOTFILES_DIR/$@"
+    source "$DOTFILES_DIR/$@"
+}
