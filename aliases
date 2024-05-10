@@ -13,6 +13,12 @@ alias free='free -h'
 alias ls='ls --color=auto --group-directories-first'
 alias vi='vim'
 
+# Better listing
+alias ll='ls -lh'
+alias la='ls -a'
+alias lla='ls -lah'
+alias llt='ls -lhtr'
+
 # Git shortcuts
 alias nah='git reset --hard;git clean -df'
 alias g='git'
