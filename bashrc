@@ -22,9 +22,9 @@ export DOTFILES_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 [ -f $DOTFILES_DIR/aliases ] && source $DOTFILES_DIR/aliases
 
 # Add some directories to the PATH
-add_to_path $DOTFILES_DIR/bin
-add_to_path $DOTFILES_DIR/.local/bin
-add_to_path $DOTFILES_DIR/.config/composer/vendor/bin
+add_to_path top $HOME/bin
+add_to_path top $HOME/.local/bin
+add_to_path top $HOME/.config/composer/vendor/bin
 
 # Enable asdf
 [ -f ~/.asdf/asdf.sh ] && source ~/.asdf/asdf.sh
