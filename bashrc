@@ -51,10 +51,6 @@ if [[ $iatest > 0 ]]; then bind "set show-all-if-ambiguous On"; fi
 # Set the default editor
 export EDITOR=vim
 export VISUAL=vim
-alias pico='edit'
-alias spico='sedit'
-alias nano='edit'
-alias snano='sedit'
 
 # To have colors for ls and all grep commands such as grep, egrep and zgrep
 export CLICOLOR=1
@@ -99,8 +95,10 @@ export GIT_PS1_SHOWUNTRACKEDFILES=1
 export PS1="\[\033[01;32m\]\t \[\033[01;34m\]\W\[\033[01;32m\]$(__git_ps1 " (%s)")\$\n\[\e[0m\]"
 
 # Load functions and aliases
-[ -f ~/.dotfiles/functions ] && source ~/.dotfiles/functions
-[ -f ~/.dotfiles/aliases ] && source ~/.dotfiles/aliases
+export DOTFILES_DIR="$HOME/.dotfiles"
+
+[ -f $DOTFILES_DIR/functions ] && source $DOTFILES_DIR/functions
+[ -f $DOTFILES_DIR/aliases ] && source $DOTFILES_DIR/aliases
 
 # Add some directories to the PATH
 add_to_path top $HOME/bin
