@@ -92,7 +92,8 @@ export GIT_PS1_SHOWDIRTYSTATE=1
 export GIT_PS1_SHOWSTASHSTATE=1
 export GIT_PS1_SHOWUNTRACKEDFILES=1
 
-export PS1="\[\033[01;32m\]\t \[\033[01;34m\]\W\[\033[01;32m\]$(__git_ps1 " (%s)")\$\n\[\e[0m\]"
+PROMPT_COMMAND='PS1_GIT=$(__git_ps1 " (%s)")'
+export PS1="\[\033[01;32m\]\t \[\033[01;34m\]\W\[\033[01;32m\]\$PS1_GIT\$\[\e[0m\] "
 
 # Load functions and aliases
 export DOTFILES_DIR="$HOME/.dotfiles"
