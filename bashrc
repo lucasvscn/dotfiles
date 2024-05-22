@@ -109,3 +109,6 @@ add_to_path top $HOME/.config/composer/vendor/bin
 # Enable asdf
 [ -f ~/.asdf/asdf.sh ] && source ~/.asdf/asdf.sh
 [ -f ~/.asdf/completions/asdf.bash ] && source ~/.asdf/completions/asdf.bash
+
+# JAVA_HOME
+[ -f ~/.asdf/plugins/java/set-java-home.bash ] && source ~/.asdf/plugins/java/set-java-home.bash
