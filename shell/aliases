@@ -1,0 +1,81 @@
+# vim: ft=sh ts=2 sw=2 et :
+
+# Add an "alert" alias for long running commands.  Use like so:
+#   sleep 10; alert
+alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
+# alias to show the date
+alias dt='date "+%Y-%m-%d %A %T %Z"'
+
+alias zshconfig="nvim ~/.zshrc && source ~/.zshrc"
+
+alias home="cd ~"
+alias desktop="cd ~/Desktop"
+alias downloads="cd ~/Downloads"
+alias cd..="cd .."
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+
+alias ls="ls --color=auto --group-directories-first"
+alias la="ls -a"
+alias lf="ls -lFh | egrep -v '^d'" # list files only
+alias lr="ls -lFh | egrep '^d'" # list directories only
+alias ll="ls -lFh"
+alias lx="ls -lXBh" # sort by extension
+alias lk="ls -lSrh" # sort by size
+alias lt="ls -ltrh" # sort by date
+alias lla="ls -lha"
+
+alias df="df -h"
+alias du="du -h"
+alias free="free -h"
+alias vi="vim"
+alias vim="nvim"
+alias mv="mv -i"
+alias rm="rm -iv"
+alias mkdir="mkdir -pv"
+alias ps="ps aux"
+alias ping="ping -c 5"
+alias less="less -R"
+alias pac="pamac"
+alias top="htop"
+
+alias rmd="rm -rfv"
+
+alias h="history | grep"
+
+alias topcpu="/bin/ps -eo pcpu,pid,user,args | sort -k 1 -r | head -10"
+
+# Count all files (recursively) in the current folder
+alias countfiles="for t in files links directories; do echo \`find . -type \${t:0:1} | wc -l\` \$t; done 2> /dev/null"
+
+# Show current network connections to the server
+alias ipview="ss -tulwn"
+
+# Alias's for safe and forced reboots
+alias rebootsafe="sudo shutdown -r now"
+alias rebootforce="sudo shutdown -r -n now"
+
+# Show all logs in /var/log
+alias logs="sudo find /var/log -type f -exec file {} \; | grep 'text' | cut -d' ' -f1 | sed -e's/:$//g' | grep -v '[0-9]$' | sudo xargs tail -f"
+
+# Git aliases
+alias nah='git reset --hard;git clean -df'
+alias g='git'
+alias gs='git status'
+
+# Docker aliases
+alias docker-rm-all='docker rm $(docker ps -a -q)'
+alias docker-gc='docker rmi $(docker images -f "dangling=true" -q);docker rm $(docker ps -a -q);docker volume rm $(docker volume ls -qf dangling=true);docker network rm $(docker network ls -qf dangling=true);docker system prune -f'
+
+# PHP shortcuts
+alias phpunit='vendor/bin/phpunit'
+alias phpunit-coverage='vendor/bin/phpunit --coverage-html=coverage'
+alias docker-composer-install='docker run --rm -u "$(id -u):$(id -g)" -v "$(pwd):/var/www/html" -w /var/www/html laravelsail/php82-composer:latest composer install --ignore-platform-reqs'
+alias docker-composer83-install='docker run --rm -u "$(id -u):$(id -g)" -v "$(pwd):/var/www/html" -w /var/www/html laravelsail/php83-composer:latest composer install --ignore-platform-reqs'
+
+# Laravel shortcuts
+alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
+alias artisan='sail artisan'
+alias tinker='sail artisan tinker'

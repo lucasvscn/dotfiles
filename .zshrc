@@ -23,8 +23,13 @@ fi
 # My Settings
 # ------------------------------------------------------------------
 
-# install asdf
-. "$HOME/.asdf/asdf.sh"
+source ~/.dotfiles/shell/functions
+source ~/.dotfiles/shell/aliases
+
+add_to_path -f $HOME/.config/composer/vendor/bin
+add_to_path -f $HOME/.local/bin
+
+[ -f $HOME/.asdf/asdf.sh ] && source $HOME/.asdf/asdf.sh
 
 # append completions to fpath
 fpath=(${ASDF_DIR}/completions $fpath)
@@ -37,17 +42,11 @@ autoload -Uz compinit && compinit
 # Set default editor
 export EDITOR="nvim"
 
-alias vi="vim"
-alias vim="nvim"
+export PAGER="less"
+export GPG_TTY=$(tty)
 
-alias zshconfig="nvim ~/.zshrc && source ~/.zshrc"
-
-alias ..="cd .."
-alias ...="cd ../.."
-alias ....="cd ../../.."
-
-alias ls="ls --color=auto --group-directories-first"
-alias la="ls -a"
-alias ll="ls -lh"
-alias lla="ls -lha"
+# SSH agent
+if [ -z "$SSH_AUTH_SOCK" ] ; then
+  eval $(ssh-agent -s) > /dev/null
+fi
 
