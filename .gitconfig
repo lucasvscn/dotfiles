@@ -1,0 +1,50 @@
+[user]
+	name = Lucas Vasconcelos
+	email = lucas@vasconcelos.cc
+	signingkey = 8883E4EC46BF6951
+[init]
+	defaultBranch = main
+[alias]
+	s = status
+	ad = add
+	aa = add --all
+	ss = status --short
+	co = checkout
+	br = branch
+	ci = commit
+	st = status
+	pl = pull
+	ps = push
+	cp = cherry-pick
+	
+	df = diff
+	dfs = diff --staged
+	diffw = diff -w --ignore-blank-lines
+	
+	lg = log --oneline
+	lgg = log --oneline --graph --decorate
+	last = log -1 HEAD
+	
+	rmb = branch -D
+	main = checkout main
+
+	unstage = reset HEAD --
+	uncommit = reset --soft HEAD^
+[core]
+	editor = vi
+[pull]
+	ff = true
+[push]
+	default = upstream
+[remote "*"]
+	prune = true
+[help "*"]
+	autocorrect = true
+[color]
+	ui = true
+[branch "*"]
+	mergeoptions = --ff-only
+[commit]
+	gpgsign = true
+[tag]
+	gpgSign = true
