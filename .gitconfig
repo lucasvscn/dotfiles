@@ -1,0 +1,26 @@
+[user]
+	name = Lucas Vasconcelos
+	email = lucas@vasconcelos.cc
+	signingkey = 9DF239DF4E1DB65C
+[init]
+	defaultBranch = main
+[commit]
+	gpgsign = true
+[tags]
+	gpgsign = true
+[alias]
+	co = checkout
+	br = branch
+	st = status
+	ss = status --short
+	ad = add
+	aa = add --all
+	lg = log --oneline
+	ps = push
+	pl = pull
+	ci = commit
+	cim = commit -m
+	last = log -1 --show-signature
+	unstage = restore --staged
+	uncommit = reset --soft HEAD^
+	s = status --short

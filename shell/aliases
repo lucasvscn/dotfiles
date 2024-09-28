@@ -1,0 +1,59 @@
+# vim : ft=sh :
+
+# Edit dotfiles
+alias edvimrc='vim ~/.vimrc'
+alias edbashrc='vim ~/.bashrc'
+alias edzshrc='vim ~/.zshrc'
+alias edaliases='vim ~/.dotfiles/shell/aliases'
+alias edfunctions='vim ~/.dotfiles/shell/functions'
+
+# Reload dotfiles
+alias reload='source ~/.bashrc'
+
+# Moving around
+alias home='cd ~'
+alias cd..='cd ..'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+
+# Better listing
+alias ls='ls --color=auto --group-directories-first'
+alias la='ls -A'
+alias lf='ls -lFh | egrep -v "^d"' # Show only files
+alias lr='ls -lFh | grep "^d"' # Show only directories
+alias ll='ls -lFh'
+alias lx='ls -lXBh' # sort by extension
+alias lk='ls -lSrh' # sort by size
+alias lt='ls -ltrh' # sort by date
+alias lc='ls -ltcrh' # sort by change time
+alias lla='ls -lAh'
+alias llart='ls -lArt' # sort by date, most recent last
+
+# File operations
+alias cp='cp -i'
+alias mv='mv -i'
+alias rm='rm -i'
+alias rmd='rm -rfv'
+alias mkdir='mkdir -p'
+
+# Editing
+alias v='vim'
+alias vi='vim'
+
+# History
+alias h='history'
+alias hg='history | grep'
+
+# Network
+alias ping='ping -c 5'
+alias ports='ss -tuln'
+
+# Laravel
+alias art='php artisan'
+alias tinker='php artisan tinker'
+alias sail='[ -f sail ] && sh sail || sh vendor/bin/sail'
+alias mfs='sail artisan migrate:fresh --seed'
+
+# Youtube-dl
+alias yt-video='yt-dlp -f "bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best"'
