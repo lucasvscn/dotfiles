@@ -57,3 +57,6 @@ alias mfs='sail artisan migrate:fresh --seed'
 
 # Youtube-dl
 alias yt-video='yt-dlp -f "bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best"'
+
+# System Updates
+alias update='sudo apt update && sudo apt upgrade -y && sudo apt autoremove -y && sudo apt autoclean && sudo snap refresh'

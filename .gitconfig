@@ -9,18 +9,44 @@
 [tags]
 	gpgsign = true
 [alias]
+	s = status --short
 	co = checkout
 	br = branch
 	st = status
 	ss = status --short
 	ad = add
 	aa = add --all
-	lg = log --oneline
 	ps = push
 	pl = pull
 	ci = commit
 	cim = commit -m
+
+	la = log --all --graph --decorate --oneline
+	lg = log --oneline
+	ls = log --stat
+	ll = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate
+	ld = log --pretty=format:"%C(yellow)%h%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --numstat
+	lg1 = log --oneline -1
+	lgg = log --graph --decorate --oneline
 	last = log -1 --show-signature
+	lgfile = log --follow -p --
+	lgfull = log --graph --decorate --oneline --full-history
+
+	diffw = diff -w
+	diffc = diff --cached
 	unstage = restore --staged
 	uncommit = reset --soft HEAD^
-	s = status --short
+[core]
+	editor = vim
+	excludesfile = ~/.gitignore
+[pull]
+	ff = true
+[push]
+	default = upstream
+[remote]
+	pushdefault = origin
+	prune = true
+[color]
+	ui = true
+[diff]
+	renames = copies
